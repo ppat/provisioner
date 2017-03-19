@@ -1,0 +1,35 @@
+---
+- name: Install build-base for gcc
+  apk:
+    name: "build-base"
+    state: present
+
+- name: Install ca-certificates
+  apk:
+    name: "ca-certificates"
+    state: present
+
+- name: Install python2
+  apk:
+    name: "python2"
+    state: present
+
+- name: Install python2-dev
+  apk:
+    name: "python2-dev"
+    state: present
+
+- name: Install py-setuptools
+  apk:
+    name: "py-setuptools"
+    state: present
+
+- name: Install virtualenv
+  apk:
+    name: "py-virtualenv"
+    state: present
+
+- name: Install ipython
+  pip:
+    name: "ipython"
+    state: present

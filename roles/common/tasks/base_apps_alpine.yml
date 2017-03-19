@@ -1,0 +1,30 @@
+---
+- name: Update packages
+  apk:
+    update_cache: yes
+
+- name: Install vim
+  apk:
+    name: "vim"
+    state: present
+
+- name: Install curl
+  apk:
+    name: "curl"
+    state: present
+
+- name: Install wget
+  apk:
+    name: "wget"
+    state: present
+
+- name: Install unzip
+  apk:
+    name: "unzip"
+    state: present
+
+- name: Install less
+  apk:
+    name: "less"
+    state: present
+

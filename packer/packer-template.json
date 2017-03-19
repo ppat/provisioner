@@ -1,8 +1,9 @@
 {
   "variables": {
     "ansible_host": "",
-    "version": "latest",
     "base_image": "",
+    "version": "",
+    "tags": "",
     "ansible_connection": "docker",
     "ansible_roles_path": "/vagrant/roles/"
   },
@@ -12,6 +13,7 @@
       "type": "docker",
       "image": "{{user `base_image`}}",
       "commit": true,
+      "pull": false,
       "run_command": [
         "-d",
         "-i",
@@ -26,13 +28,6 @@
 
   "provisioners": [
     {
-      "type": "shell",
-      "inline": [
-        "apt-get update",
-        "apt-get install python-minimal -yq"
-      ]
-    },
-    {
       "type": "ansible",
       "ansible_env_vars": [
         "ANSIBLE_ROLES_PATH={{user `ansible_roles_path` }}"
@@ -40,6 +35,7 @@
       "user": "root",
       "playbook_file": "./packer-playbook.yml",
       "extra_arguments": [
+        "--tags", "{{user `tags`}}",
         "--extra-vars",
         "ansible_host={{user `ansible_host`}} ansible_connection={{user `ansible_connection`}}"
       ]
@@ -47,7 +43,9 @@
     {
       "type": "shell",
       "inline": [
-        "rm -rf /var/lib/apt/lists/*"
+        "rm -rf /var/lib/apt/lists/*",
+        "rm -rf /var/cache/apk/*",
+        "rm -rf /tmp/*"
       ]
     }
   ],
@@ -57,7 +55,8 @@
       {
         "type": "docker-tag",
         "repository": "{{ user `ansible_host` }}",
-        "tag": "latest"
+        "tag": "{{user `version`}}",
+        "force": true
       }
     ]
   ]

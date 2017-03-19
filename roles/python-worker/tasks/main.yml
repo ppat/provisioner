@@ -1,3 +1,6 @@
 ---
-- include: ../../common/tasks/python_base.yml
+- include: python_ubuntu.yml
+  tags: ubuntu
 
+- include: python_alpine.yml
+  tags: alpine

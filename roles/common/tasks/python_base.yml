@@ -1,0 +1,30 @@
+---
+- name: Update packages
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Install package gcc
+  apt:
+    name: "gcc"
+    state: present
+
+- name: Install package g++
+  apt:
+    name: "g++"
+    state: present
+
+- name: Install python-dev
+  apt:
+    name: "python-dev"
+    state: present
+
+- name: Install python-virtualenv
+  apt:
+    name: "python-virtualenv"
+    state: present
+
+- name: Install ipython
+  apt:
+    name: "ipython"
+    state: present

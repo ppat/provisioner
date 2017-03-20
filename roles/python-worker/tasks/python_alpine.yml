@@ -1,35 +1,35 @@
 ---
-- name: Install build-base for gcc
+- name: install build-base for gcc - alpine
   apk:
     name: "build-base"
     state: present
 
-- name: Install ca-certificates
+- name: install ca-certificates - alpine
   apk:
     name: "ca-certificates"
     state: present
 
-- name: Install python2
+- name: install python2 - alpine
   apk:
     name: "python2"
     state: present
 
-- name: Install python2-dev
+- name: install python2-dev - alpine
   apk:
     name: "python2-dev"
     state: present
 
-- name: Install py-setuptools
+- name: install py-setuptools - alpine
   apk:
     name: "py-setuptools"
     state: present
 
-- name: Install virtualenv
+- name: install virtualenv - alpine
   apk:
     name: "py-virtualenv"
     state: present
 
-- name: Install ipython
+- name: install ipython - alpine
   pip:
     name: "ipython"
     state: present

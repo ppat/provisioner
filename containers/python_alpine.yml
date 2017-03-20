@@ -1,0 +1,4 @@
+---
+container_role: "python-worker"
+base_image: "alpine_base"
+base_image_version: "latest"

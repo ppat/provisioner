@@ -1,6 +1,6 @@
 ---
 - include: base_apps_ubuntu.yml
-  tags: ubuntu
+  when: ansible_distribution == "Ubuntu"
 
 - include: base_apps_alpine.yml
-  tags: alpine
+  when: ansible_distribution == "Alpine"

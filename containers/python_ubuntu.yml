@@ -1,0 +1,4 @@
+---
+container_role: "python-worker"
+base_image: "ubuntu_base"
+base_image_version: "latest"

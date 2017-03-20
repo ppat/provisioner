@@ -1,29 +1,29 @@
 ---
-- name: Update packages
+- name: update packages - alpine
   apk:
     update_cache: yes
 
-- name: Install vim
+- name: install vim - alpine
   apk:
     name: "vim"
     state: present
 
-- name: Install curl
+- name: install curl - alpine
   apk:
     name: "curl"
     state: present
 
-- name: Install wget
+- name: install wget - alpine
   apk:
     name: "wget"
     state: present
 
-- name: Install unzip
+- name: install unzip - alpine
   apk:
     name: "unzip"
     state: present
 
-- name: Install less
+- name: install less - alpine
   apk:
     name: "less"
     state: present

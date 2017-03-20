@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
     apt-get install -y zip unzip vim curl wget less \
-                       python python-software-properties \
+                       python python-software-properties python-pip \
                        software-properties-common
     echo "*****************************************************"
     echo "********* Basic environment setup completed *********"
@@ -40,6 +40,8 @@ Vagrant.configure("2") do |config|
     echo "**************** Packer installed *******************"
     echo "*****************************************************"
     echo
+
+    pip install shyaml
 
   SHELL
 

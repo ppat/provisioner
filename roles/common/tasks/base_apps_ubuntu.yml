@@ -1,55 +1,55 @@
 ---
-- name: Update packages
+- name: update packages - ubuntu
   apt:
     update_cache: yes
     cache_valid_time: 3600
 
-- name: Install vim
+- name: install vim - ubuntu
   apt:
     name: "vim"
     state: present
 
-- name: Install curl
+- name: install curl - ubuntu
   apt:
     name: "curl"
     state: present
 
-- name: Install wget
+- name: install wget - ubuntu
   apt:
     name: "wget"
     state: present
 
-- name: Install unzip
+- name: install unzip - ubuntu
   apt:
     name: "unzip"
     state: present
 
-- name: Install less
+- name: install less - ubuntu
   apt:
     name: "less"
     state: present
 
-- name: Install dnsutils
+- name: install dnsutils - ubuntu
   apt:
     name: "dnsutils"
     state: present
 
-- name: Install net-tools
+- name: install net-tools - ubuntu
   apt:
     name: "net-tools"
     state: present
 
-- name: Install sysstat
+- name: install sysstat - ubuntu
   apt:
     name: "sysstat"
     state: present
 
-- name: Install htop
+- name: install htop - ubuntu
   apt:
     name: "htop"
     state: present
 
-- name: Install jq
+- name: install jq - ubuntu
   apt:
     name: "jq"
     state: present

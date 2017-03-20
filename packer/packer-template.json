@@ -2,8 +2,6 @@
   "variables": {
     "ansible_host": "",
     "base_image": "",
-    "version": "",
-    "tags": "",
     "ansible_connection": "docker",
     "ansible_roles_path": "/vagrant/roles/"
   },
@@ -33,9 +31,8 @@
         "ANSIBLE_ROLES_PATH={{user `ansible_roles_path` }}"
       ],
       "user": "root",
-      "playbook_file": "./packer-playbook.yml",
+      "playbook_file": "/vagrant/packer/packer-playbook.yml",
       "extra_arguments": [
-        "--tags", "{{user `tags`}}",
         "--extra-vars",
         "ansible_host={{user `ansible_host`}} ansible_connection={{user `ansible_connection`}}"
       ]
@@ -55,7 +52,12 @@
       {
         "type": "docker-tag",
         "repository": "{{ user `ansible_host` }}",
-        "tag": "{{user `version`}}",
+        "tag": "{{isotime \"20060102_150405\"}}"
+      },
+      {
+        "type": "docker-tag",
+        "repository": "{{ user `ansible_host` }}",
+        "tag": "latest",
         "force": true
       }
     ]
